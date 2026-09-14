@@ -1,0 +1,780 @@
+:root {
+	/* =========================================================
+     MORI DESIGN SYSTEM
+     主題：亞麻 / 鼠尾草綠 / 陶土
+     ========================================================= */
+
+
+	/* =========================================================
+     01. BRAND COLORS
+     品牌核心色
+     ========================================================= */
+
+	--color-primary-50: #F5F6F2;
+	--color-primary-100: #E8EBE3;
+	--color-primary-200: #D5DCCF;
+	--color-primary-300: #C1CCBA;
+	--color-primary-400: #A8B19F;
+	--color-primary-500: #8E9B86;
+	--color-primary-600: #74816D;
+	--color-primary-700: #596258;
+	--color-primary-800: #454D45;
+	--color-primary-900: #343B35;
+
+
+	/* =========================================================
+     02. SECONDARY / LINEN
+     亞麻、米白、燕麥色
+     ========================================================= */
+
+	--color-linen-50: #FCFBF8;
+	--color-linen-100: #FAF8F3;
+	--color-linen-200: #F5F1E8;
+	--color-linen-300: #F1EDE3;
+	--color-linen-400: #E8E1D5;
+	--color-linen-500: #D8CCB9;
+	--color-linen-600: #C4B6A0;
+	--color-linen-700: #A99A83;
+	--color-linen-800: #887B67;
+	--color-linen-900: #665C4E;
+
+
+	/* =========================================================
+     03. ACCENT / CLAY
+     陶土、暖棕、手作感
+     ========================================================= */
+
+	--color-clay-50: #FBF6F2;
+	--color-clay-100: #F4E9E0;
+	--color-clay-200: #E8D5C7;
+	--color-clay-300: #D9BDA9;
+	--color-clay-400: #C9A38C;
+	--color-clay-500: #B88E72;
+	--color-clay-600: #A1765D;
+	--color-clay-700: #855E4A;
+	--color-clay-800: #694A3C;
+	--color-clay-900: #4B352C;
+
+
+	/* =========================================================
+     04. DARK / FOREST
+     深色背景與深色品牌色
+     ========================================================= */
+
+	--color-forest: #F1F3F0;
+	--color-forest-100: #E0E4DF;
+	--color-forest-200: #C2C9C2;
+	--color-forest-300: #A2ADA3;
+	--color-forest-400: #7F8C81;
+	--color-forest-500: #657267;
+	--color-forest-600: #596258;
+	--color-forest-700: #454D45;
+	--color-forest-800: #343B35;
+	--color-forest-900: #282D29;
+
+
+	/* =========================================================
+     05. NEUTRAL / WARM GRAY
+     中性暖灰
+     ========================================================= */
+
+	--color-neutral-50: #FCFBF9;
+	--color-neutral-100: #F7F5F0;
+	--color-neutral-200: #EEEAE2;
+	--color-neutral-300: #E0DBD1;
+	--color-neutral-400: #C9C2B7;
+	--color-neutral-500: #AAA297;
+	--color-neutral-600: #878076;
+	--color-neutral-700: #68635B;
+	--color-neutral-800: #4A4741;
+	--color-neutral-900: #302F2B;
+
+
+	/* =========================================================
+     06. PURE COLORS
+     基礎黑白色
+     ========================================================= */
+
+	--color-white: #FFFFFF;
+	--color-black: #1F211E;
+
+
+	/* =========================================================
+     07. BACKGROUND
+     背景語意系統
+     ========================================================= */
+
+	/* 主要頁面背景 */
+	--bg-primary: #FAF8F3;
+
+	/* 次要背景 */
+	--bg-secondary: #F1EDE3;
+
+	/* 表面與內容容器背景 */
+	--bg-card: #FFFFFF;
+
+	/* 弱化背景 */
+	--bg-muted: #F5F1E8;
+
+	/* 品牌色淡背景 */
+	--bg-brand-soft: #E8EBE3;
+
+	/* 強調色淡背景 */
+	--bg-accent-soft: #F4E9E0;
+
+	/* 深色背景 */
+	--bg-dark: #343B35;
+
+	/* 深色背景的更深層級 */
+	--bg-dark-deep: #282D29;
+
+	/* 最深背景 */
+	--bg-black: #1F211E;
+
+	/* 一般遮罩 */
+	--bg-overlay: rgba(40, 45, 41, 0.48);
+
+	/* 半透明表面 */
+	--bg-glass: rgba(250, 248, 243, 0.78);
+
+	/* 淡色遮罩 */
+	--overlay-light: rgba(40, 45, 41, 0.04);
+
+	/* 中度遮罩 */
+	--overlay-medium: rgba(40, 45, 41, 0.08);
+
+	/* 強度遮罩 */
+	--overlay-heavy: rgba(40, 45, 41, 0.16);
+
+
+	/* =========================================================
+     08. TEXT COLORS
+     文字語意系統
+     ========================================================= */
+
+	/* 主要文字 */
+	--text-primary: #383A35;
+
+	/* 次要文字 */
+	--text-secondary: #68635B;
+
+	/* 輔助文字 */
+	--text-tertiary: #878076;
+
+	/* 淡化文字 */
+	--text-muted: #AAA297;
+
+	/* 禁用文字 */
+	--text-disabled: #C9C2B7;
+
+	/* 反白文字 */
+	--text-inverse: #FAF8F3;
+
+	/* 反白次要文字 */
+	--text-inverse-secondary: rgba(250, 248, 243, 0.75);
+
+	/* 反白淡化文字 */
+	--text-inverse-muted: rgba(250, 248, 243, 0.5);
+
+	/* 深色背景上的主要文字 */
+	--text-on-dark: #FAF8F3;
+
+	/* 品牌色文字 */
+	--text-brand: #596258;
+
+	/* 強調色文字 */
+	--text-accent: #A1765D;
+
+
+	/* =========================================================
+     09. BORDER
+     邊框語意系統
+     ========================================================= */
+
+	/* 一般邊框 */
+	--border-default: #E0DBD1;
+
+	/* 淡色邊框 */
+	--border-light: #EEEAE2;
+
+	/* 中度邊框 */
+	--border-medium: #D8CCB9;
+
+	/* 深色邊框 */
+	--border-dark: #AAA297;
+
+	/* 品牌色邊框 */
+	--border-brand: #A8B19F;
+
+	/* 強調色邊框 */
+	--border-accent: #D9BDA9;
+
+	/* Focus 狀態邊框 */
+	--border-focus: #74816D;
+
+	/* 錯誤狀態邊框 */
+	--border-error: #B96B62;
+
+	/* 成功狀態邊框 */
+	--border-success: #71886D;
+
+	/* 反白邊框 */
+	--border-inverse: rgba(250, 248, 243, 0.4);
+
+	/* 強反白邊框 */
+	--border-inverse-strong: rgba(250, 248, 243, 0.8);
+
+
+	/* =========================================================
+     10. STATUS COLORS
+     系統狀態色
+     ========================================================= */
+
+	/* -------------------------
+     成功
+     ------------------------- */
+
+	--color-success-50: #F1F6F0;
+	--color-success-100: #E1ECE0;
+	--color-success-200: #C4D8C1;
+	--color-success-300: #A4C0A0;
+	--color-success-400: #89A886;
+	--color-success-500: #718E6D;
+	--color-success-600: #5D7859;
+	--color-success-700: #4A6147;
+	--color-success-800: #3B4E39;
+	--color-success-900: #2E3D2C;
+
+	--status-success: #718E6D;
+	--status-success-bg: #E1ECE0;
+	--status-success-text: #4A6147;
+
+
+	/* -------------------------
+     警告
+     ------------------------- */
+
+	--color-warning-50: #FCF8ED;
+	--color-warning-100: #F7EFD8;
+	--color-warning-200: #EFDFB5;
+	--color-warning-300: #E6CD8D;
+	--color-warning-400: #D6B86A;
+	--color-warning-500: #C3A154;
+	--color-warning-600: #A88742;
+	--color-warning-700: #896D35;
+	--color-warning-800: #6C562C;
+	--color-warning-900: #514121;
+
+	--status-warning: #C3A154;
+	--status-warning-bg: #F7EFD8;
+	--status-warning-text: #896D35;
+
+
+	/* -------------------------
+     錯誤
+     ------------------------- */
+
+	--color-error-50: #FCF3F1;
+	--color-error-100: #F6E3DF;
+	--color-error-200: #EBC7C1;
+	--color-error-300: #DDA69E;
+	--color-error-400: #CC867D;
+	--color-error-500: #B96B62;
+	--color-error-600: #A3554D;
+	--color-error-700: #85453F;
+	--color-error-800: #693933;
+	--color-error-900: #4F2C28;
+
+	--status-error: #B96B62;
+	--status-error-bg: #F6E3DF;
+	--status-error-text: #85453F;
+
+
+	/* -------------------------
+     資訊
+     ------------------------- */
+
+	--color-info-50: #F0F5F6;
+	--color-info-100: #E0EBED;
+	--color-info-200: #C2DADD;
+	--color-info-300: #A3C6CB;
+	--color-info-400: #83B0B7;
+	--color-info-500: #699AA2;
+	--color-info-600: #56818A;
+	--color-info-700: #466970;
+	--color-info-800: #38545A;
+	--color-info-900: #2D4348;
+
+	--status-info: #699AA2;
+	--status-info-bg: #E0EBED;
+	--status-info-text: #466970;
+
+
+	/* =========================================================
+     11. INTERACTION
+     互動狀態
+     ========================================================= */
+
+	/* -------------------------
+     主要按鈕
+     ------------------------- */
+
+	--button-primary-bg: #596258;
+	--button-primary-hover: #454D45;
+	--button-primary-active: #343B35;
+	--button-primary-text: #FAF8F3;
+
+	/* -------------------------
+     次要按鈕
+     ------------------------- */
+
+	--button-secondary-bg: #F1EDE3;
+	--button-secondary-hover: #E8E1D5;
+	--button-secondary-active: #D8CCB9;
+	--button-secondary-text: #454D45;
+
+	/* -------------------------
+     外框按鈕
+     ------------------------- */
+
+	--button-outline-bg: transparent;
+	--button-outline-border: #D8CCB9;
+	--button-outline-hover: #F1EDE3;
+	--button-outline-active: #E8E1D5;
+	--button-outline-text: #454D45;
+
+	/* -------------------------
+     幽靈按鈕
+     ------------------------- */
+
+	--button-ghost-bg: transparent;
+	--button-ghost-hover: #F1EDE3;
+	--button-ghost-active: #E8E1D5;
+	--button-ghost-text: #596258;
+
+	/* -------------------------
+     禁用狀態
+     ------------------------- */
+
+	--button-disabled-bg: #E0DBD1;
+	--button-disabled-text: #AAA297;
+
+
+	/* =========================================================
+     12. FORM
+     表單元件
+     ========================================================= */
+
+	/* 輸入框背景 */
+	--input-bg: #FFFFFF;
+
+	/* 滑入背景 */
+	--input-bg-hover: #FCFBF9;
+
+	/* Focus 背景 */
+	--input-bg-focus: #FFFFFF;
+
+	/* 禁用背景 */
+	--input-bg-disabled: #F1EDE3;
+
+	/* 一般邊框 */
+	--input-border: #D8CCB9;
+
+	/* Hover 邊框 */
+	--input-border-hover: #AAA297;
+
+	/* Focus 邊框 */
+	--input-border-focus: #74816D;
+
+	/* 錯誤邊框 */
+	--input-border-error: #B96B62;
+
+	/* 輸入文字 */
+	--input-text: #383A35;
+
+	/* Placeholder */
+	--input-placeholder: #AAA297;
+
+	/* 禁用文字 */
+	--input-disabled-text: #C9C2B7;
+
+	/* Focus 光暈 */
+	--input-focus-ring: rgba(116, 129, 109, 0.18);
+
+
+	/* =========================================================
+     13. LINK
+     連結
+     ========================================================= */
+
+	--link-default: #596258;
+
+	--link-hover: #454D45;
+
+	--link-active: #343B35;
+
+	--link-visited: #74816D;
+
+
+	/* =========================================================
+     14. ICON
+     圖示
+     ========================================================= */
+
+	--icon-primary: #454D45;
+
+	--icon-secondary: #74816D;
+
+	--icon-muted: #AAA297;
+
+	--icon-disabled: #C9C2B7;
+
+	--icon-inverse: #FAF8F3;
+
+	--icon-brand: #596258;
+
+	--icon-accent: #A1765D;
+
+
+	/* =========================================================
+     15. PRODUCT / COMMERCE
+     商品與商務
+     ========================================================= */
+
+	/* 價格 */
+	--price-color: #596258;
+
+	/* 特價 */
+	--sale-color: #B96B62;
+
+	/* 原價 */
+	--price-original: #AAA297;
+
+	/* 有庫存 */
+	--stock-available: #718E6D;
+
+	/* 庫存偏低 */
+	--stock-low: #C3A154;
+
+	/* 售罄 */
+	--stock-out: #B96B62;
+
+	/* -------------------------
+     標籤
+     ------------------------- */
+
+	--badge-new-bg: #E8EBE3;
+	--badge-new-text: #596258;
+
+	--badge-sale-bg: #F4E9E0;
+	--badge-sale-text: #855E4A;
+
+	--badge-popular-bg: #F1EDE3;
+	--badge-popular-text: #665C4E;
+
+
+	/* =========================================================
+     16. EDITOR
+     編輯器
+     ========================================================= */
+
+	/* 編輯區背景 */
+	--editor-bg: #EEEAE2;
+
+	/* 編輯畫布 */
+	--editor-canvas-bg: #FFFFFF;
+
+	/* 工具列背景 */
+	--editor-toolbar-bg: #FAF8F3;
+
+	/* 側邊欄背景 */
+	--editor-sidebar-bg: #F5F1E8;
+
+	/* 選取狀態 */
+	--editor-selection: #74816D;
+
+	/* 選取背景 */
+	--editor-selection-bg: rgba(168, 177, 159, 0.12);
+
+	/* 輔助線 */
+	--editor-guide: #B88E72;
+
+	/* 格線 */
+	--editor-grid: #E0DBD1;
+
+	/* 禁用區域 */
+	--editor-disabled: #D8D3C9;
+
+	/* 警告區域 */
+	--editor-warning: #C3A154;
+
+	/* 錯誤區域 */
+	--editor-error: #B96B62;
+
+
+	/* =========================================================
+     17. DESIGN CARD
+     設計卡片
+     ========================================================= */
+
+	--design-card-bg: #F1EDE3;
+
+	--design-card-surface: #FAF8F3;
+
+	--design-card-primary: #596258;
+
+	--design-card-secondary: #A8B19F;
+
+	--design-card-accent: #B88E72;
+
+	--design-card-text: #383A35;
+
+	--design-card-muted: #878076;
+
+
+	/* =========================================================
+     18. NAVIGATION
+     導覽系統
+     ========================================================= */
+
+	--nav-bg: rgba(250, 248, 243, 0.88);
+
+	--nav-bg-solid: #FAF8F3;
+
+	--nav-border: rgba(216, 204, 185, 0.65);
+
+	--nav-text: #454D45;
+
+	--nav-text-muted: #878076;
+
+	--nav-active: #596258;
+
+
+	/* =========================================================
+     19. DIVIDER
+     分隔線
+     ========================================================= */
+
+	--divider-light: #EEEAE2;
+
+	--divider-default: #E0DBD1;
+
+	--divider-dark: #D8CCB9;
+
+
+	/* =========================================================
+     20. SHADOW
+     陰影
+     ========================================================= */
+
+	/* 極淡陰影 */
+	--shadow-xs:
+		0 1px 2px rgba(56, 58, 53, 0.04);
+
+	/* 小陰影 */
+	--shadow-sm:
+		0 2px 8px rgba(56, 58, 53, 0.05);
+
+	/* 中陰影 */
+	--shadow-md:
+		0 6px 20px rgba(56, 58, 53, 0.07);
+
+	/* 大陰影 */
+	--shadow-lg:
+		0 12px 40px rgba(56, 58, 53, 0.09);
+
+	/* 強陰影 */
+	--shadow-xl:
+		0 20px 60px rgba(56, 58, 53, 0.12);
+
+
+	/* =========================================================
+     21. BORDER RADIUS
+     圓角
+     ========================================================= */
+
+	--radius-xs: 4px;
+
+	--radius-sm: 6px;
+
+	--radius-md: 10px;
+
+	--radius-lg: 14px;
+
+	--radius-xl: 20px;
+
+	--radius-2xl: 28px;
+
+	--radius-full: 9999px;
+
+
+	/* =========================================================
+     22. SPACING
+     間距
+     ========================================================= */
+
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 20px;
+	--space-6: 24px;
+	--space-7: 28px;
+	--space-8: 32px;
+	--space-9: 36px;
+	--space-10: 40px;
+	--space-12: 48px;
+	--space-16: 64px;
+	--space-20: 80px;
+	--space-24: 96px;
+	--space-30: 120px;
+	--space-60: 240px;
+
+
+	/* =========================================================
+     23. TYPOGRAPHY
+     字體系統
+     ========================================================= */
+
+	/* 無襯線字體 */
+	--font-sans:
+		"Noto Sans TC",
+		"PingFang TC",
+		"Microsoft JhengHei",
+		sans-serif;
+
+	/* 襯線字體 */
+	--font-serif:
+		"Noto Serif TC",
+		"Songti TC",
+		"PMingLiU",
+		serif;
+
+	/* 展示字體 */
+	--font-display:
+		"Noto Serif TC",
+		"Songti TC",
+		serif;
+
+
+	/* -------------------------
+     字級
+     ------------------------- */
+
+	--text-xs: 12px;
+
+	--text-sm: 14px;
+
+	--text-md: 16px;
+
+	--text-lg: 18px;
+
+	--text-xl: 20px;
+
+	--text-2xl: 24px;
+
+	--text-3xl: 32px;
+
+	--text-4xl: 40px;
+
+	--text-5xl: 48px;
+
+	--text-6xl: 64px;
+
+	--text-7xl: 80px;
+
+
+	/* -------------------------
+     行高
+     ------------------------- */
+
+	--leading-tight: 1.2;
+
+	--leading-snug: 1.35;
+
+	--leading-normal: 1.5;
+
+	--leading-relaxed: 1.7;
+
+	--leading-loose: 2;
+
+
+	/* -------------------------
+     字重
+     ------------------------- */
+
+	--font-regular: 400;
+
+	--font-medium: 500;
+
+	--font-semibold: 600;
+
+	--font-bold: 700;
+
+
+	/* -------------------------
+     字距
+     ------------------------- */
+
+	--tracking-tight: -0.02em;
+
+	--tracking-normal: 0;
+
+	--tracking-wide: 0.04em;
+
+	--tracking-wider: 0.08em;
+
+	--tracking-widest: 0.14em;
+
+
+	/* =========================================================
+     24. TRANSITION
+     動畫與過渡
+     ========================================================= */
+
+	/* 快速互動 */
+	--transition-fast:
+		150ms ease;
+
+	/* 一般互動 */
+	--transition-normal:
+		250ms ease;
+
+	/* 慢速過渡 */
+	--transition-slow:
+		400ms ease;
+
+	/* 彈性過渡 */
+	--transition-spring:
+		350ms cubic-bezier(0.22, 1, 0.36, 1);
+
+
+	/* =========================================================
+     25. Z-INDEX
+     層級
+     ========================================================= */
+
+	/* 基礎內容 */
+	--z-base: 1;
+
+	/* 下拉內容 */
+	--z-dropdown: 100;
+
+	/* 固定內容 */
+	--z-sticky: 200;
+
+	/* 導覽 */
+	--z-header: 300;
+
+	/* 遮罩 */
+	--z-overlay: 400;
+
+	/* Modal */
+	--z-modal: 500;
+
+	/* Toast */
+	--z-toast: 600;
+
+	/* Tooltip */
+	--z-tooltip: 700;
+}

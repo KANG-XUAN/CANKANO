@@ -1,0 +1,567 @@
+/* ============================================================
+   App Header
+   MORI / Linen / Sage / Clay Theme
+   ============================================================ */
+
+.app-header {
+	width: 100%;
+	height: var(--header-height);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0 var(--space-6);
+
+	box-sizing: border-box;
+
+	background: var(--nav-bg);
+	color: var(--nav-text);
+
+	font-family: var(--font-sans);
+
+	font-size: var(--text-md);
+	font-weight: var(--font-semibold);
+
+	border-bottom: 1px solid var(--nav-border);
+
+	/*
+	 * Linen 玻璃感
+	 */
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+
+	position: relative;
+	z-index: var(--z-header);
+}
+
+
+/* ============================================================
+   Brand
+   ============================================================ */
+
+.brand {
+	display: flex;
+	align-items: center;
+
+	gap: 10px;
+
+	height: 100%;
+
+	text-decoration: none;
+	
+	cursor: pointer;
+
+	color: var(--text-brand);
+
+	transition:
+		color var(--transition-normal);
+}
+
+
+/* ============================================================
+   Brand Icon
+   ============================================================ */
+
+.brand-icon {
+	width: 38px;
+	height: 38px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	flex-shrink: 0;
+
+	border-radius: var(--radius-md);
+
+	background: var(--color-primary-600);
+	color: var(--color-white);
+
+	box-shadow: var(--shadow-xs);
+
+	transition:
+		transform var(--transition-spring),
+		background-color var(--transition-normal),
+		box-shadow var(--transition-normal);
+}
+
+
+.brand-icon svg {
+	display: block;
+
+	transition:
+		transform var(--transition-spring);
+}
+
+
+/* ============================================================
+   Brand Icon Hover
+   ============================================================ */
+
+.app-header:hover .brand-icon {
+	background: var(--color-primary-700);
+
+	transform: scale(1.05);
+
+	box-shadow: var(--shadow-md);
+}
+
+
+.app-header:hover .brand-icon svg {
+	transform: rotate(-3deg);
+}
+
+
+/* ============================================================
+   Brand Title
+   ============================================================ */
+
+.brand-title {
+	display: flex;
+	align-items: center;
+
+	height: 100%;
+
+	color: var(--text-brand);
+
+	font-family: var(--font-sans);
+
+	font-size: 28px;
+	font-weight: var(--font-bold);
+
+	line-height: 1;
+
+	letter-spacing: var(--tracking-tight);
+
+	white-space: nowrap;
+}
+
+
+/* ============================================================
+   Brand Letter
+   ============================================================ */
+
+.brand-letter {
+	display: inline-block;
+
+	flex-shrink: 0;
+}
+
+
+/* ============================================================
+   AN 展開區域
+   ============================================================ */
+
+.brand-an {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 0;
+
+	flex-shrink: 0;
+
+	overflow: hidden;
+
+	color: var(--color-primary-600);
+
+	transition:
+		width var(--transition-spring);
+}
+
+
+/* ============================================================
+   AN 文字
+   ============================================================ */
+
+.brand-an-text {
+	display: inline-block;
+
+	flex-shrink: 0;
+
+	color: var(--color-primary-600);
+
+	font-size: 28px;
+	font-weight: var(--font-bold);
+
+	opacity: 0;
+
+	transform: scaleX(0);
+
+	transform-origin: center;
+
+	transition:
+		opacity var(--transition-spring),
+		transform var(--transition-spring);
+}
+
+
+/* ============================================================
+   Header Hover
+   ============================================================ */
+
+.app-header:hover .brand-an {
+	width: 38px;
+}
+
+
+.app-header:hover .brand-an-text {
+	opacity: 1;
+
+	transform: scaleX(1);
+}
+
+
+/* ============================================================
+   Slogan
+   ============================================================ */
+
+.text-secondary {
+	display: inline-flex;
+	align-items: center;
+
+	gap: var(--space-3);
+
+	margin-left: var(--space-3);
+
+	color: var(--text-tertiary);
+
+	font-family: var(--font-sans);
+
+	font-size: var(--text-xl);
+	font-weight: var(--font-medium);
+
+	letter-spacing: var(--tracking-wide);
+
+	opacity: 0;
+
+	transform: translateX(-8px);
+
+	transition:
+		opacity var(--transition-spring),
+		transform var(--transition-spring);
+}
+
+
+/* ============================================================
+   Slogan Line
+   ============================================================ */
+
+.slogan-line {
+	display: block;
+
+	width: 18px;
+	height: 2px;
+
+	flex-shrink: 0;
+
+	background: var(--color-linen-600);
+
+	border-radius: var(--radius-full);
+}
+
+
+/* ============================================================
+   Header Hover - Slogan
+   ============================================================ */
+
+.app-header:hover .text-secondary {
+	opacity: 1;
+
+	transform: translateX(0);
+}
+
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+
+.main-nav {
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+
+	gap: var(--space-1);
+}
+
+
+/* ============================================================
+   Navigation Links / Buttons
+   ============================================================ */
+
+.main-nav>a,
+.nav-dropdown>button {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	height: 100%;
+
+	padding: 0 var(--space-3);
+
+	border: 0;
+
+	background: transparent;
+	color: var(--nav-text-muted);
+
+	font-family: var(--font-sans);
+	font-size: var(--text-sm);
+	font-weight: var(--font-semibold);
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	transition:
+		background-color var(--transition-normal),
+		color var(--transition-normal);
+}
+
+
+/* ============================================================
+   Navigation Hover
+   ============================================================ */
+
+.main-nav>a:hover,
+.nav-dropdown>button:hover {
+	background: var(--color-linen-200);
+
+	color: var(--nav-text);
+
+	border-radius: var(--radius-sm);
+}
+
+
+/* ============================================================
+   Navigation Underline
+   ============================================================ */
+
+.main-nav>a::after,
+.nav-dropdown>button::after {
+	content: "";
+
+	position: absolute;
+
+	left: var(--space-3);
+	right: var(--space-3);
+	bottom: 8px;
+
+	height: 2px;
+
+	background: var(--color-primary-500);
+
+	border-radius: var(--radius-full);
+
+	transform: scaleX(0);
+
+	transform-origin: center;
+
+	transition:
+		transform var(--transition-normal);
+}
+
+
+.main-nav>a:hover::after,
+.nav-dropdown>button:hover::after {
+	transform: scaleX(1);
+}
+
+
+/* ============================================================
+   Dropdown
+   ============================================================ */
+
+.nav-dropdown {
+	position: relative;
+
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+}
+
+
+/* ============================================================
+   Dropdown Arrow
+   ============================================================ */
+
+.dropdown-arrow {
+	margin-left: 6px;
+
+	color: var(--icon-secondary);
+
+	font-size: var(--text-sm);
+
+	transition:
+		transform var(--transition-normal),
+		color var(--transition-normal);
+}
+
+
+.nav-dropdown:hover .dropdown-arrow {
+	color: var(--icon-brand);
+
+	transform: rotate(180deg);
+}
+
+
+/* ============================================================
+   Dropdown Menu
+   ============================================================ */
+
+.dropdown-menu {
+	position: absolute;
+
+	top: calc(100% + 8px);
+	right: 0;
+
+	min-width: 180px;
+
+	padding: var(--space-2);
+
+	display: flex;
+	flex-direction: column;
+
+	background: var(--bg-card);
+
+	border: 1px solid var(--border-light);
+
+	border-radius: var(--radius-md);
+
+	box-shadow: var(--shadow-lg);
+
+	z-index: var(--z-dropdown);
+
+	opacity: 0;
+
+	visibility: hidden;
+
+	transform: translateY(-8px);
+
+	transition:
+		opacity var(--transition-fast),
+		transform var(--transition-fast),
+		visibility var(--transition-fast);
+}
+
+
+/* ============================================================
+   Dropdown Hover
+   ============================================================ */
+
+.nav-dropdown:hover .dropdown-menu {
+	opacity: 1;
+
+	visibility: visible;
+
+	transform: translateY(0);
+}
+
+
+/* ============================================================
+   Dropdown Items
+   ============================================================ */
+
+.dropdown-menu a {
+	display: block;
+
+	padding: 10px var(--space-3);
+
+	border-radius: var(--radius-sm);
+
+	color: var(--text-secondary);
+
+	font-family: var(--font-sans);
+
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+
+	text-decoration: none;
+
+	white-space: nowrap;
+
+	transition:
+		background-color var(--transition-fast),
+		color var(--transition-fast),
+		padding-left var(--transition-fast);
+}
+
+
+/* ============================================================
+   Dropdown Item Hover
+   ============================================================ */
+
+.dropdown-menu a:hover {
+	background: var(--bg-brand-soft);
+
+	color: var(--text-brand);
+
+	padding-left: var(--space-4);
+}
+
+
+/* ============================================================
+   Optional: Active Navigation
+   如果你的 HTML 有 .active 可以直接使用
+   ============================================================ */
+
+.main-nav>a.active,
+.nav-dropdown>button.active {
+	color: var(--nav-active);
+	background: var(--color-linen-200);
+}
+
+
+.main-nav>a.active::after,
+.nav-dropdown>button.active::after {
+	transform: scaleX(1);
+}
+
+
+/* ============================================================
+   Optional: Focus Accessibility
+   ============================================================ */
+
+.main-nav>a:focus-visible,
+.nav-dropdown>button:focus-visible,
+.dropdown-menu a:focus-visible {
+	outline: none;
+
+	box-shadow:
+		0 0 0 3px var(--input-focus-ring);
+
+	border-radius: var(--radius-sm);
+}
+
+
+/* ============================================================
+   Optional: Header Bottom Accent
+   非常淡的品牌線
+   ============================================================ */
+
+.app-header::after {
+	content: "";
+
+	position: absolute;
+
+	left: 0;
+	right: 0;
+	bottom: -1px;
+
+	height: 1px;
+
+	background:
+		linear-gradient(90deg,
+			transparent 0%,
+			var(--color-linen-400) 25%,
+			var(--color-primary-300) 50%,
+			var(--color-linen-400) 75%,
+			transparent 100%);
+
+	opacity: 0.55;
+
+	pointer-events: none;
+}

@@ -1,0 +1,157 @@
+/* pages/Auth/Background.css */
+
+.auth-background {
+	position: absolute;
+	inset: 0;
+
+	overflow: hidden;
+
+	background: var(--bg-primary);
+
+	pointer-events: none;
+}
+
+
+/* =========================================================
+   圓形圖片
+   ========================================================= */
+
+.auth-background__image {
+	position: absolute;
+
+	width: 150vw;
+	height: 150vw;
+
+	left: -100vw;
+	top: 50%;
+
+	transform: translateY(-50%);
+
+	border-radius: 50%;
+
+	background-image:
+		url('https://images.pexels.com/photos/11285973/pexels-photo-11285973.jpeg');
+
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   Radial Mask
+
+   這裡才是原本 Canvas 的核心概念。
+
+   圓心：
+   約在畫面左側
+
+   中心區域：
+   完整顯示圖片
+
+   外圍：
+   逐漸淡出到頁面背景
+
+   不是左右 Linear Gradient。
+   ========================================================= */
+
+.auth-background__mask {
+	position: absolute;
+	inset: 0;
+
+	background:
+		radial-gradient(
+			circle 75vw at -25vw 50%,
+			transparent 0%,
+			transparent 20%,
+			rgba(250, 248, 243, 0.12) 38%,
+			rgba(250, 248, 243, 0.42) 55%,
+			rgba(250, 248, 243, 0.78) 72%,
+			var(--bg-primary) 100%
+		);
+}
+
+
+/* =========================================================
+   Desktop
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+	.auth-background__image {
+		width: 150vw;
+		height: 150vw;
+
+		left: -100vw;
+	}
+
+	.auth-background__mask {
+		background:
+			radial-gradient(
+				circle 75vw at -25vw 50%,
+				transparent 0%,
+				transparent 20%,
+				rgba(250, 248, 243, 0.1) 38%,
+				rgba(250, 248, 243, 0.38) 55%,
+				rgba(250, 248, 243, 0.75) 72%,
+				var(--bg-primary) 100%
+			);
+	}
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 1199px) {
+
+	.auth-background__image {
+		width: 160vw;
+		height: 160vw;
+
+		left: -108vw;
+	}
+
+	.auth-background__mask {
+		background:
+			radial-gradient(
+				circle 78vw at -27vw 50%,
+				transparent 0%,
+				transparent 18%,
+				rgba(250, 248, 243, 0.12) 36%,
+				rgba(250, 248, 243, 0.45) 55%,
+				rgba(250, 248, 243, 0.8) 74%,
+				var(--bg-primary) 100%
+			);
+	}
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+	.auth-background__image {
+		width: 180vw;
+		height: 180vw;
+
+		left: -115vw;
+		top: 25%;
+	}
+
+	.auth-background__mask {
+		background:
+			radial-gradient(
+				circle 90vw at -25vw 25%,
+				transparent 0%,
+				transparent 18%,
+				rgba(250, 248, 243, 0.18) 35%,
+				rgba(250, 248, 243, 0.5) 55%,
+				rgba(250, 248, 243, 0.82) 75%,
+				var(--bg-primary) 100%
+			);
+	}
+}

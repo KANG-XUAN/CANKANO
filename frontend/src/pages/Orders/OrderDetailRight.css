@@ -1,0 +1,250 @@
+.detail-right {
+	min-width: 0;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.detail-progress-section {
+	position: relative;
+	margin: var(--space-4);
+	padding: var(--space-8) var(--space-6);
+	border: 1px solid var(--border-light);
+	border-radius: var(--radius-lg);
+	background: var(--color-forest);
+	box-shadow: var(--shadow-xs);
+}
+
+.detail-progress-section .detail-section-header {
+	margin-bottom: var(--space-10);
+}
+
+.progress-timeline {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: start;
+	width: 100%;
+}
+
+.progress-step-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	min-width: 0;
+}
+
+.progress-step {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-3);
+	min-width: 0;
+	text-align: center;
+}
+
+.progress-circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border: 2px solid var(--color-neutral-300);
+	border-radius: var(--radius-full);
+	background: var(--bg-primary);
+	color: var(--text-muted);
+	font-size: var(--text-sm);
+	font-weight: var(--font-semibold);
+	transition:
+		background var(--transition-normal),
+		border-color var(--transition-normal),
+		color var(--transition-normal),
+		box-shadow var(--transition-normal);
+}
+
+.progress-step.completed .progress-circle {
+	border-color: var(--color-primary-600);
+	background: var(--color-primary-600);
+	color: var(--text-inverse);
+}
+
+.progress-step.current .progress-circle {
+	border-color: var(--color-clay-500);
+	background: var(--color-clay-100);
+	color: var(--color-clay-700);
+	box-shadow: 0 0 0 5px rgba(184, 142, 114, 0.1);
+}
+
+.progress-step-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-2);
+	min-width: 0;
+}
+
+.progress-step-label strong {
+	color: var(--text-secondary);
+	font-size: 11px;
+	font-weight: var(--font-medium);
+	white-space: nowrap;
+}
+
+.progress-step.completed .progress-step-label strong {
+	color: var(--text-brand);
+}
+
+.progress-step.current .progress-step-label strong {
+	color: var(--text-accent);
+}
+
+.progress-step-label span {
+	color: var(--text-tertiary);
+	font-size: 9px;
+	line-height: var(--leading-normal);
+}
+
+/*
+ * Timeline connection
+ *
+ * 每個 wrapper 的中心點就是圓圈中心。
+ * width: 100% 會從目前圓圈中心延伸到下一個圓圈中心。
+ *
+ * 第一條：
+ * completed → current
+ *
+ * 第二條：
+ * current → upcoming
+ */
+.progress-line {
+	position: absolute;
+	z-index: 1;
+	top: 23px;
+	left: 50%;
+	width: 100%;
+	height: 5px;
+	border-radius: var(--radius-full);
+	pointer-events: none;
+}
+
+/* Price */
+
+.detail-price-section {
+	padding: var(--space-6);
+	border-top: 1px solid var(--border-default);
+	background: var(--bg-card);
+}
+
+.price-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-4);
+	margin-bottom: var(--space-3);
+	color: var(--text-secondary);
+	font-size: var(--text-xs);
+}
+
+.price-row strong {
+	color: var(--text-primary);
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+}
+
+.price-row.discount strong {
+	color: var(--sale-color);
+}
+
+.price-divider {
+	height: 1px;
+	margin: var(--space-4) 0;
+	background: var(--divider-light);
+}
+
+.price-row.total {
+	margin-bottom: var(--space-5);
+}
+
+.price-row.total span {
+	color: var(--text-primary);
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+}
+
+.price-row.total strong {
+	color: var(--price-color);
+	font-size: var(--text-xl);
+	font-weight: var(--font-semibold);
+}
+
+.detail-secondary-button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 42px;
+	padding: 0 var(--space-4);
+	border: 1px solid var(--button-outline-border);
+	border-radius: var(--radius-sm);
+	background: var(--button-outline-bg);
+	color: var(--button-outline-text);
+	font-size: var(--text-xs);
+	cursor: pointer;
+	transition:
+		background var(--transition-normal),
+		border-color var(--transition-normal);
+}
+
+.detail-secondary-button:hover {
+	border-color: var(--border-medium);
+	background: var(--button-outline-hover);
+}
+
+.detail-secondary-button span {
+	font-size: var(--text-md);
+}
+
+@media (max-width: 900px) {
+	.detail-right {
+		grid-template-rows: auto auto;
+	}
+
+	.detail-progress-section {
+		margin: var(--space-3);
+		padding: var(--space-6) var(--space-5);
+	}
+
+	.detail-progress-section .detail-section-header {
+		margin-bottom: var(--space-8);
+	}
+}
+
+@media (max-width: 640px) {
+	.progress-circle {
+		width: 40px;
+		height: 40px;
+		font-size: var(--text-xs);
+	}
+
+	.progress-line {
+		top: 19px;
+		height: 4px;
+	}
+
+	.progress-step-label strong {
+		font-size: 10px;
+	}
+
+	.progress-step-label span {
+		font-size: 8px;
+	}
+
+	.detail-progress-section {
+		margin: var(--space-2);
+		padding: var(--space-5) var(--space-3);
+	}
+
+	.detail-price-section {
+		padding: var(--space-5) var(--space-4);
+	}
+}

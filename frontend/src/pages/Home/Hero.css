@@ -1,0 +1,696 @@
+/* pages/Home/Hero.css */
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+	position: relative;
+
+	display: grid;
+	grid-template-columns: 42% 58%;
+
+	width: 100%;
+	min-height: calc(100vh - var(--header-height));
+
+	overflow: hidden;
+
+	background: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+
+/* =========================
+   LEFT
+========================= */
+
+.hero__left {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	min-width: 0;
+
+	padding: var(--space-12);
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.hero__brand h1 {
+	margin: 0;
+
+	color: var(--text-primary);
+
+	font-size: clamp(
+		var(--text-6xl),
+		10vw,
+		180px
+	);
+
+	font-weight: var(--font-medium);
+	line-height: 0.78;
+
+	letter-spacing: -0.08em;
+}
+
+
+/* =========================
+   BRAND WORD
+========================= */
+
+.hero__brand-word {
+	color: var(--text-brand);
+}
+
+
+/* =========================
+   BRAND AN
+========================= */
+
+.hero__brand-an {
+	position: relative;
+
+	display: inline-block;
+
+	color: var(--text-brand);
+
+	transition:
+		color var(--transition-slow);
+
+	/*
+		限制光澤效果只存在於 AN 的文字區域，
+		不影響 C / K / O。
+	*/
+	overflow: hidden;
+}
+
+
+/* =========================
+   AN FOCUS
+========================= */
+
+/*
+	只有 AN 本身改變顏色。
+
+	同一行的 C / K / O 完全不受影響。
+*/
+
+.hero__brand-an.is-focused {
+	color: var(--text-brand);
+
+	animation:
+		heroAnFocus
+		0.8s
+		cubic-bezier(0.22, 1, 0.36, 1)
+		both;
+}
+
+
+/* =========================
+   AN GLASS HIGHLIGHT
+========================= */
+
+/*
+	不是矩形遮罩。
+
+	這是一條非常細的「玻璃反光」，
+	利用文字本身的 clip-path 限制在 AN 字形內。
+*/
+
+.hero__brand-an.is-focused::after {
+	content: "";
+
+	position: absolute;
+
+	top: -20%;
+	left: -70%;
+
+	width: 35%;
+	height: 140%;
+
+	pointer-events: none;
+
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(250, 248, 243, 0.08) 25%,
+		rgba(250, 248, 243, 0.7) 50%,
+		rgba(250, 248, 243, 0.08) 75%,
+		transparent 100%
+	);
+
+	transform: skewX(-18deg);
+
+	/*
+		讓光澤只顯示在文字形狀內。
+	*/
+	mix-blend-mode: screen;
+
+	animation:
+		heroAnShine
+		0.9s
+		cubic-bezier(0.22, 1, 0.36, 1)
+		0.05s
+		both;
+}
+
+
+/* =========================
+   AN COLOR FOCUS
+========================= */
+
+@keyframes heroAnFocus {
+	0% {
+		color: var(--text-primary);
+	}
+
+	35% {
+		color: var(--color-primary-600);
+	}
+
+	100% {
+		color: var(--text-accent);
+	}
+}
+
+
+/* =========================
+   AN GLASS SHINE
+========================= */
+
+@keyframes heroAnShine {
+	0% {
+		left: -70%;
+		opacity: 0;
+	}
+
+	15% {
+		opacity: 0.9;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	85% {
+		opacity: 0.25;
+	}
+
+	100% {
+		left: 150%;
+		opacity: 0;
+	}
+}
+
+
+/* =========================
+   STATEMENT
+========================= */
+
+.hero__statement {
+	display: flex;
+	flex-direction: column;
+
+	gap: var(--space-10);
+
+	max-width: 560px;
+
+	padding-bottom: var(--space-12);
+}
+
+
+.hero__statement-content {
+	animation:
+		heroStatementIn
+		0.7s
+		ease
+		both;
+}
+
+
+/* =========================
+   STATEMENT ANIMATION
+========================= */
+
+@keyframes heroStatementIn {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.hero__eyebrow {
+	margin: 0 0 var(--space-6);
+
+	color: var(--text-tertiary);
+
+	font-size: 11px;
+	font-weight: var(--font-medium);
+
+	letter-spacing: var(--tracking-widest);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero__title {
+	max-width: 520px;
+
+	margin: 0;
+
+	color: var(--text-primary);
+
+	font-size: clamp(
+		20px,
+		2vw,
+		var(--text-3xl)
+	);
+
+	font-weight: var(--font-regular);
+	line-height: 1.08;
+
+	letter-spacing: -0.035em;
+}
+
+
+.hero__title--an {
+	color: var(--text-accent);
+	font-size: clamp(
+		24px,
+		2.5vw,
+		var(--text-4xl)
+	);
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.hero__subtitle {
+	margin: var(--space-5) 0 0;
+
+	color: var(--text-secondary);
+
+	font-size: var(--text-sm);
+	line-height: var(--leading-loose);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.hero__cta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 190px;
+
+	padding: 0 0 var(--space-2);
+
+	border: 0;
+	border-bottom: 1px solid var(--border-dark);
+
+	background: transparent;
+
+	color: var(--text-primary);
+
+	font-size: 11px;
+	font-weight: var(--font-medium);
+
+	letter-spacing: var(--tracking-wider);
+
+	cursor: pointer;
+
+	transition:
+		color var(--transition-normal),
+		border-color var(--transition-normal);
+}
+
+
+.hero__cta:hover {
+	color: var(--text-brand);
+	border-bottom-color: var(--border-brand);
+}
+
+
+.hero__cta span {
+	font-size: var(--text-md);
+
+	transition:
+		transform var(--transition-normal);
+}
+
+
+.hero__cta:hover span {
+	transform: translate(4px, -4px);
+}
+
+
+/* =========================
+   RIGHT
+========================= */
+
+.hero__right {
+	position: relative;
+
+	min-height: 100%;
+
+	background: var(--bg-secondary);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.hero__image-wrapper {
+	position: absolute;
+	inset: 0;
+
+	overflow: hidden;
+
+	animation:
+		heroImageIn
+		0.9s
+		ease
+		both;
+}
+
+
+@keyframes heroImageIn {
+	from {
+		opacity: 0;
+		transform: scale(1.03);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+
+.hero__image {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.hero__image-overlay {
+	position: absolute;
+	inset: 0;
+
+	background:
+		linear-gradient(
+			180deg,
+			var(--overlay-light),
+			transparent 40%,
+			var(--overlay-medium)
+		);
+}
+
+
+/* =========================
+   PAGINATION
+========================= */
+
+.hero__pagination {
+	position: absolute;
+
+	right: var(--space-10);
+	bottom: var(--space-12);
+
+	z-index: var(--z-base);
+
+	display: flex;
+	gap: var(--space-5);
+}
+
+
+.hero__dot {
+	position: relative;
+
+	width: 28px;
+
+	padding: 0;
+
+	border: 0;
+
+	background: transparent;
+
+	color: var(--text-inverse-muted);
+
+	font-size: 10px;
+	font-weight: var(--font-medium);
+
+	cursor: pointer;
+
+	transition:
+		color var(--transition-normal);
+}
+
+
+.hero__dot:hover {
+	color: var(--text-inverse-secondary);
+}
+
+
+.hero__dot.is-active {
+	color: var(--text-inverse);
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.hero__scroll {
+	position: absolute;
+
+	top: var(--space-12);
+	right: var(--space-10);
+
+	z-index: var(--z-base);
+
+	display: flex;
+	align-items: center;
+
+	gap: var(--space-3);
+
+	color: var(--text-inverse-primary);
+
+	font-size: 9px;
+	font-weight: var(--font-medium);
+
+	letter-spacing: var(--tracking-wider);
+
+	writing-mode: vertical-rl;
+}
+
+
+.hero__scroll-line {
+	width: 1px;
+	height: 42px;
+
+	background: var(--border-inverse);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+	/* =========================
+	   HERO
+	========================= */
+
+	.hero {
+		grid-template-columns: 1fr;
+
+		min-height: 100svh;
+	}
+
+
+	/* =========================
+	   LEFT
+	========================= */
+
+	.hero__left {
+		position: absolute;
+		inset: 0;
+
+		z-index: var(--z-base);
+
+		padding: var(--space-7);
+
+		color: var(--text-on-dark);
+	}
+
+
+	/* =========================
+	   BRAND
+	========================= */
+
+	.hero__brand h1 {
+		color: var(--text-on-dark);
+
+		font-size: clamp(
+			var(--text-6xl),
+			18vw,
+			120px
+		);
+	}
+
+
+	.hero__brand-word {
+		color: var(--text-on-dark);
+	}
+
+
+	.hero__brand-an {
+		color: var(--text-on-dark);
+	}
+
+
+	.hero__brand-an.is-focused {
+		color: var(--text-inverse);
+	}
+
+
+	/* =========================
+	   STATEMENT
+	========================= */
+
+	.hero__statement {
+		padding-bottom: var(--space-7);
+	}
+
+
+	.hero__eyebrow {
+		color: var(--text-inverse-secondary);
+	}
+
+
+	.hero__title {
+		color: var(--text-on-dark);
+	}
+
+
+	.hero__subtitle {
+		color: var(--text-inverse-secondary);
+	}
+
+
+	/* =========================
+	   CTA
+	========================= */
+
+	.hero__cta {
+		color: var(--text-on-dark);
+
+		border-bottom-color:
+			var(--border-inverse-strong);
+	}
+
+
+	.hero__cta:hover {
+		color: var(--text-on-dark);
+
+		border-bottom-color:
+			var(--text-on-dark);
+	}
+
+
+	/* =========================
+	   RIGHT
+	========================= */
+
+	.hero__right {
+		min-height: 100svh;
+	}
+
+
+	.hero__image {
+		filter: brightness(0.7);
+	}
+
+
+	/* =========================
+	   PAGINATION
+	========================= */
+
+	.hero__pagination {
+		right: var(--space-7);
+		bottom: var(--space-7);
+	}
+
+
+	/* =========================
+	   SCROLL
+	========================= */
+
+	.hero__scroll {
+		display: none;
+	}
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.hero__brand-an.is-focused {
+		animation: none;
+		color: var(--text-brand);
+	}
+
+	.hero__brand-an.is-focused::after {
+		animation: none;
+		opacity: 0;
+	}
+
+	.hero__statement-content,
+	.hero__image-wrapper {
+		animation: none;
+	}
+
+	.hero__dot,
+	.hero__cta,
+	.hero__cta span,
+	.hero__brand-an {
+		transition: none;
+	}
+}

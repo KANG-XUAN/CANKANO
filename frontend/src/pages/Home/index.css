@@ -1,0 +1,61 @@
+/* pages/Home/index.css */
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+	width: 100%;
+
+	background: var(--bg-primary);
+	color: var(--text-primary);
+
+	font-family: var(--font-sans);
+}
+
+
+/* =========================
+   GLOBAL BOX MODEL
+========================= */
+
+.home *,
+.home *::before,
+.home *::after {
+	box-sizing: border-box;
+}
+
+
+/* =========================
+   FORM / BUTTON RESET
+========================= */
+
+.home button,
+.home input,
+.home textarea,
+.home select {
+	font: inherit;
+}
+
+.home button {
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   MEDIA
+========================= */
+
+.home img {
+	max-width: 100%;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+	.home {
+		min-height: 100svh;
+	}
+}

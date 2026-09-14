@@ -1,0 +1,23 @@
+/* pages/NewsDetail/NewsList.css */
+
+.news-detail-page {
+	width: 100%;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	padding: var(--space-12) var(--space-6) var(--space-24);
+}
+
+.news-detail-container {
+	width: min(100%, 900px);
+	margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+	.news-detail-page {
+		padding: var(--space-8) var(--space-4) var(--space-16);
+	}
+
+	.news-detail-container {
+		width: 100%;
+	}
+}

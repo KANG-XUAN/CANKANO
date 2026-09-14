@@ -1,0 +1,9 @@
+/* pages/OrderSuccess/index.css */
+
+.order-success {
+	min-height: calc(100vh - var(--header-height));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg-primary);
+}

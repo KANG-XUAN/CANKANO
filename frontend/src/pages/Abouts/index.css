@@ -1,0 +1,24 @@
+/* pages/Abouts/index.css */
+
+.abouts-page {
+	width: 100%;
+	min-height: 100vh;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	overflow: hidden;
+}
+
+.abouts-page section {
+	width: 100%;
+}
+
+.abouts-page__container {
+	width: min(1200px, calc(100% - 48px));
+	margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+	.abouts-page__container {
+		width: min(100% - 32px, 1200px);
+	}
+}

@@ -1,0 +1,21 @@
+/* pages/News/index.css */
+
+.news-page {
+	width: 100%;
+	min-height: 100vh;
+
+	background: var(--bg-primary);
+	color: var(--text-primary);
+}
+
+.news-page__container {
+	width: min(1080px, calc(100% - 48px));
+	margin: 0 auto;
+	padding-bottom: var(--space-24);
+}
+
+@media (max-width: 768px) {
+	.news-page__container {
+		width: min(100% - 32px, 1080px);
+	}
+}

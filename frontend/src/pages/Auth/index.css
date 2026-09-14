@@ -1,0 +1,20 @@
+/* pages/Auth/index.css */
+
+.auth-page {
+	position: relative;
+
+	width: 100%;
+	min-height: calc(100vh - var(--header-height));
+
+	overflow: hidden;
+
+	background: var(--bg-primary);
+}
+
+.auth-page__content {
+	position: relative;
+	z-index: var(--z-base);
+
+	width: 100%;
+	min-height: calc(100vh - var(--header-height));
+}

@@ -1,0 +1,432 @@
+.summary-right {
+	min-width: 0;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	min-height: 210px;
+	/* background: var(--color-neutral-100); */
+	border-left: 1px solid var(--border-light);
+}
+
+.summary-status-area {
+	display: grid;
+	grid-template-columns: 1fr 135px;
+	min-height: 155px;
+}
+
+.summary-status-content-area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 0;
+	padding: var(--space-5);
+}
+
+.summary-status-label {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-4);
+	border-left: 1px solid var(--border-light);
+	text-align: center;
+	transition:
+		background var(--transition-normal),
+		border-color var(--transition-normal);
+}
+
+.summary-status-label span {
+	color: var(--text-tertiary);
+	font-size: var(--text-xs);
+	letter-spacing: var(--tracking-wide);
+}
+
+.summary-status-label strong {
+	font-family: var(--font-serif);
+	font-size: var(--text-md);
+	font-weight: var(--font-regular);
+	line-height: var(--leading-snug);
+}
+
+/* =========================================================
+   STATUS COLORS
+   每種訂單狀態使用獨立的語意色
+   ========================================================= */
+
+/* 買家確認中 — 陶土暖色 */
+.summary-status-label.status-confirming {
+	background: var(--bg-accent-soft);
+	border-left-color: var(--border-accent);
+}
+
+.summary-status-label.status-confirming strong {
+	color: var(--color-clay-700);
+}
+
+.summary-status-label.status-confirming span {
+	color: var(--color-clay-600);
+}
+
+/* 訂單進行中 — 資訊藍綠色 */
+.summary-status-label.status-processing {
+	background: var(--status-info-bg);
+	border-left-color: var(--color-info-200);
+}
+
+.summary-status-label.status-processing strong {
+	color: var(--status-info-text);
+}
+
+.summary-status-label.status-processing span {
+	color: var(--color-info-600);
+}
+
+/* 訂單已完成 — 草木綠 */
+.summary-status-label.status-completed {
+	background: var(--status-success-bg);
+	border-left-color: var(--color-success-200);
+}
+
+.summary-status-label.status-completed strong {
+	color: var(--status-success-text);
+}
+
+.summary-status-label.status-completed span {
+	color: var(--color-success-600);
+}
+
+/* 訂單已取消 — 柔和紅棕色 */
+.summary-status-label.status-cancelled {
+	background: var(--status-error-bg);
+	border-left-color: var(--color-error-200);
+}
+
+.summary-status-label.status-cancelled strong {
+	color: var(--status-error-text);
+}
+
+.summary-status-label.status-cancelled span {
+	color: var(--color-error-600);
+}
+
+/* =========================================================
+   ACTION BUTTON
+   ========================================================= */
+
+.summary-action-button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 55px;
+	padding: 0 var(--space-6);
+	border: 0;
+	background: var(--button-primary-bg);
+	color: var(--button-primary-text);
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+	cursor: pointer;
+	transition: background var(--transition-normal);
+}
+
+.summary-action-button:hover:not(:disabled) {
+	background: var(--button-primary-hover);
+}
+
+.summary-action-button span {
+	font-size: var(--text-lg);
+	transition: transform var(--transition-fast);
+}
+
+.summary-action-button:hover:not(:disabled) span {
+	transform: translateX(4px);
+}
+
+.summary-action-button.is-disabled,
+.summary-action-button:disabled {
+	background: var(--button-disabled-bg);
+	color: var(--button-disabled-text);
+	cursor: not-allowed;
+}
+
+/* =========================================================
+   COMMON STATUS CONTENT
+   ========================================================= */
+
+.summary-status-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+	width: 100%;
+	text-align: center;
+}
+
+.status-content-label {
+	color: var(--text-secondary);
+	font-size: var(--text-xs);
+	letter-spacing: var(--tracking-wide);
+}
+
+.status-content-hint {
+	color: var(--text-tertiary);
+	font-size: 11px;
+	line-height: var(--leading-normal);
+}
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown-content strong {
+	color: var(--text-brand);
+	font-family: var(--font-serif);
+	font-size: var(--text-3xl);
+	font-weight: var(--font-regular);
+	letter-spacing: var(--tracking-wide);
+}
+
+.countdown-content strong.is-expired {
+	color: var(--status-error);
+}
+
+/* =========================================================
+   TRUCK
+   ========================================================= */
+
+.truck-content {
+	gap: var(--space-3);
+}
+
+.road {
+	position: relative;
+	width: 80%;
+	height: 42px;
+	overflow: hidden;
+	border-bottom: 3px solid var(--color-neutral-500);
+}
+
+.road::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 2px;
+	background: repeating-linear-gradient(
+		90deg,
+		transparent 0,
+		transparent 16px,
+		var(--color-neutral-400) 16px,
+		var(--color-neutral-400) 30px
+	);
+}
+
+.truck {
+	position: absolute;
+	left: -55px;
+	bottom: 3px;
+	width: 48px;
+	height: 27px;
+	animation: truck-drive 3.2s linear infinite;
+}
+
+.truck-body {
+	position: absolute;
+	left: 0;
+	bottom: 4px;
+	width: 32px;
+	height: 19px;
+	border-radius: 3px 2px 2px 2px;
+	background: var(--color-primary-600);
+}
+
+.truck-body::after {
+	content: "";
+	position: absolute;
+	right: -12px;
+	bottom: 0;
+	width: 15px;
+	height: 14px;
+	border-radius: 2px 4px 2px 2px;
+	background: var(--color-primary-500);
+}
+
+.truck-window {
+	position: absolute;
+	right: -9px;
+	top: 3px;
+	width: 7px;
+	height: 7px;
+	border-radius: 1px;
+	background: var(--color-linen-200);
+}
+
+.truck-wheel {
+	position: absolute;
+	bottom: 0;
+	width: 8px;
+	height: 8px;
+	border: 2px solid var(--color-neutral-700);
+	border-radius: 50%;
+	background: var(--color-neutral-300);
+}
+
+.truck-wheel-left {
+	left: 6px;
+}
+
+.truck-wheel-right {
+	right: 7px;
+}
+
+@keyframes truck-drive {
+	0% {
+		left: -55px;
+	}
+
+	100% {
+		left: calc(100% + 10px);
+	}
+}
+
+/* =========================================================
+   RATING
+   ========================================================= */
+
+.rating-content {
+	gap: var(--space-2);
+}
+
+.rating-stars {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.rating-stars button {
+	padding: 0 2px;
+	border: 0;
+	background: transparent;
+	color: var(--color-neutral-300);
+	font-size: 24px;
+	line-height: 1;
+	cursor: pointer;
+	transition:
+		color var(--transition-fast),
+		transform var(--transition-fast);
+}
+
+.rating-stars button:hover,
+.rating-stars button.is-active {
+	color: var(--color-warning-500);
+}
+
+.rating-stars button:hover {
+	transform: scale(1.12);
+}
+
+/*
+ * Hover 時前面的星星也會一起亮起。
+ * activeRating 已由 JSX 計算：
+ * hoveredRating || rating
+ */
+
+.rating-stars:hover button {
+	color: var(--color-neutral-300);
+}
+
+.rating-stars:hover button.is-active {
+	color: var(--color-warning-500);
+}
+
+/* =========================================================
+   CANCEL
+   ========================================================= */
+
+.cancel-content {
+	align-items: flex-start;
+	padding-left: var(--space-4);
+}
+
+.cancel-checkbox {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	color: var(--text-secondary);
+	font-size: var(--text-sm);
+	cursor: pointer;
+	user-select: none;
+}
+
+.cancel-checkbox input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.custom-checkbox {
+	position: relative;
+	width: 18px;
+	height: 18px;
+	border: 1px solid var(--border-dark);
+	border-radius: var(--radius-xs);
+	background: var(--bg-card);
+	transition:
+		background var(--transition-fast),
+		border-color var(--transition-fast);
+}
+
+.cancel-checkbox input:checked + .custom-checkbox {
+	border-color: var(--color-primary-600);
+	background: var(--color-primary-600);
+}
+
+.cancel-checkbox input:checked + .custom-checkbox::after {
+	content: "";
+	position: absolute;
+	left: 5px;
+	top: 2px;
+	width: 5px;
+	height: 9px;
+	border-right: 2px solid var(--color-white);
+	border-bottom: 2px solid var(--color-white);
+	transform: rotate(45deg);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+	.summary-right {
+		border-top: 1px solid var(--border-light);
+		border-left: 0;
+	}
+
+	.summary-status-area {
+		grid-template-columns: 1fr 140px;
+	}
+}
+
+@media (max-width: 640px) {
+	.summary-status-area {
+		grid-template-columns: 1fr;
+	}
+
+	.summary-status-label {
+		flex-direction: row;
+		justify-content: space-between;
+		border-top: 1px solid var(--border-light);
+		border-left: 0;
+	}
+
+	.summary-status-content-area {
+		min-height: 145px;
+	}
+
+	.summary-action-button {
+		min-height: 52px;
+	}
+}

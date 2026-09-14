@@ -1,0 +1,91 @@
+/* pages/Abouts/BrandStory.css */
+
+.brand-story {
+	padding: var(--space-30) 0;
+	background: var(--bg-card);
+}
+
+.brand-story__container {
+	width: min(1100px, calc(100% - 48px));
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	gap: var(--space-20);
+}
+
+.brand-story__eyebrow {
+	margin: 0 0 var(--space-6);
+	color: var(--text-accent);
+	font-family: var(--font-sans);
+	font-size: var(--text-sm);
+	font-weight: var(--font-semibold);
+	letter-spacing: var(--tracking-widest);
+}
+
+.brand-story__title {
+	margin: 0;
+	color: var(--color-forest-800);
+	font-family: var(--font-display);
+	font-size: clamp(32px, 4vw, 52px);
+	font-weight: var(--font-regular);
+	line-height: var(--leading-snug);
+	letter-spacing: var(--tracking-tight);
+}
+
+.brand-story__content {
+	padding-top: var(--space-2);
+}
+
+.brand-story__content > p {
+	margin: 0 0 var(--space-6);
+	color: var(--text-secondary);
+	font-family: var(--font-sans);
+	font-size: var(--text-md);
+	line-height: var(--leading-relaxed);
+}
+
+.brand-story__content > p:last-of-type {
+	margin-bottom: var(--space-12);
+}
+
+.brand-story__quote {
+	position: relative;
+	padding: var(--space-8) var(--space-8) var(--space-8) var(--space-10);
+	background: var(--bg-secondary);
+	border-left: 3px solid var(--color-clay-500);
+}
+
+.brand-story__quote-mark {
+	position: absolute;
+	left: var(--space-4);
+	top: var(--space-3);
+	color: var(--color-clay-400);
+	font-family: Georgia, serif;
+	font-size: 40px;
+	line-height: 1;
+}
+
+.brand-story__quote p {
+	margin: 0;
+	color: var(--text-brand);
+	font-family: var(--font-display);
+	font-size: var(--text-xl);
+	font-style: italic;
+	line-height: var(--leading-relaxed);
+}
+
+@media (max-width: 768px) {
+	.brand-story {
+		padding: var(--space-20) 0;
+	}
+
+	.brand-story__container {
+		grid-template-columns: 1fr;
+		gap: var(--space-10);
+		width: min(100% - 32px, 1100px);
+	}
+
+	.brand-story__title {
+		font-size: var(--text-3xl);
+	}
+}

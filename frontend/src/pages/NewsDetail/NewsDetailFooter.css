@@ -1,0 +1,43 @@
+/* pages/NewsDetail/NewsDetailFooter.css */
+
+.news-detail-footer {
+	margin-top: var(--space-16);
+}
+
+.news-detail-footer-line {
+	width: 100%;
+	height: 1px;
+
+	margin-bottom: var(--space-6);
+
+	background: var(--divider-default);
+}
+
+.news-detail-back {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2);
+
+	color: var(--text-brand);
+
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+
+	text-decoration: none;
+
+	transition: color var(--transition-fast);
+}
+
+.news-detail-back span {
+	font-size: var(--text-lg);
+
+	transition: transform var(--transition-fast);
+}
+
+.news-detail-back:hover {
+	color: var(--link-hover);
+}
+
+.news-detail-back:hover span {
+	transform: translateX(-4px);
+}
